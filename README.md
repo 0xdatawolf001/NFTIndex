@@ -1,5 +1,7 @@
 # DeepNFTValue NFT Index
 
+The deprecated dashboard can be found [here](https://flipsidecrypto.xyz/0xDataWolf/nft-price-index-zO7ZZS) 
+
 > **WARNING**: As the data provider, Flipside Crypto, has deprecated DeepNFTValue data. This markdown serves as a documentation on this work. There are some learnings from this approach that I think is worth documenting for future use
 
 ## Background and Motivation
