@@ -1,60 +1,63 @@
 # DeepNFTValue NFT Index
 
-The deprecated dashboard can be found [here](https://flipsidecrypto.xyz/0xDataWolf/nft-price-index-zO7ZZS) 
+The deprecated dashboard can be found [here](https://flipsidecrypto.xyz/0xDataWolf/nft-price-index-zO7ZZS).
 
-> **WARNING**: As the data provider, Flipside Crypto, has deprecated DeepNFTValue data. This markdown serves as a documentation on this work. There are some learnings from this approach that I think is worth documenting for future use
+> **WARNING**: As the data provider, Flipside Crypto, has deprecated DeepNFTValue data, this markdown serves as documentation for this work.  There are some learnings from this approach that I think are worth documenting for future use.
 
 ## Background and Motivation
-As the name implies, Non-Fungible Tokens (NFTs) are tokens (or assets) with various characteristics that makes each asset different from each other. This is the "non-fungible" component because they are not exactly interchangable. 
 
-This also implies that, due to the differences in certain attributes, the market prices these assets differently.
+As the name implies, Non-Fungible Tokens (NFTs) are tokens (or assets) with various characteristics that make each asset different from one another. This is the "non-fungible" component, because they are not interchangeable.
 
-You can think of it this way: Perhaps a house is worth more because there is less glare from the morning sun or it is near a school. Its pretty obvious that no two homes would cost the same, or are interchangeable, because there are plenty of factors that affects their price
+This also implies that, due to differences in certain attributes, the market prices these assets differently.
 
-Likewise, some NFTs are valued more because they have cool attributes that people want: For instance, the red panda with its various clothes is worth a lot more than a plain looking cat
+You can think of it this way: Perhaps a house is worth more because there is less glare from the morning sun, or it is near a school. No two homes would cost the same, or are interchangeable, because there are plenty of factors that affect their price. This applies to NFTs as well (assuming their characteristics have differences).
+
+Likewise, some NFTs are valued more because they have cool attributes that people want: For instance, a red panda with various clothes is worth a lot more than a plain-looking cat.
 
 ![Red Panda vs Cat](panda_vs_cat.png)
 
 ## Problem Statement
 
-Due to the reasons above, a few questions arise. To help non-crypto people reading this, I've attempted to "translate" the implications and reasoning behind the questions to help you frame the question better 🙂
+Due to the reasons above, a few questions arise. To help non-crypto people reading this, I've attempted to "translate" the implications and reasoning behind the questions to help you frame them better 🙂
 
 1) **What are some price trends given the attributes of an NFT collection?**
-   * *Translated: Are homes that are near schools getting more expensive over time*
+   * *Translated: Are homes near schools getting more expensive over time?*
 
-2) **What is the driver of an NFT's price**
-   * *Translated: What is making a home expensive? Distance? Number of Bedrooms?*
+2) **What is the driver of an NFT's price?**
+   * *Translated: What makes a home expensive? Distance? Number of bedrooms?*
 
 3) **What is the general price trend across price cohorts for a collection? Can we compare this with other NFT collections?**
    * *Translated: Are expensive homes in New York getting more expensive at a faster rate than cheaper homes in New York?*
    * *Translated: Are expensive homes in New York getting more expensive at a faster rate than expensive homes in Texas?*
 
+
 **Why are these questions important?**
 
-1. The more expensive NFTs are usually a leading sign of an NFT's collection health and status. Purchase and price appreciation in the more coveted NFTs show conviction and seeing this data helps in investment decisions
+1. More expensive NFTs usually indicate a healthy and coveted NFT collection. Purchases and price appreciation in the most desirable NFTs demonstrate strong conviction, and this data aids investment decisions.
 
-2. If an NFT investor wants to get into a collection, is he better off buying the cheapest NFT in the collection or should he go for quality?
+2. If an NFT investor wants to enter a collection, should they buy the cheapest NFT or prioritize quality?
 
 ## Methodology
 ### Data Scope
 
 **DeepNFTValue**
 
-The price provided is from DeepNFTValue. They are company that uses machine learning to predict NFT prices by accounting their trading history and attributes. This is neccessary because not all NFTs are traded and to get a complete picture of them we need to "fill in the gaps"
+The price provided is from DeepNFTValue, a company that uses machine learning to predict NFT prices by accounting for their trading history and attributes. This is necessary because not all NFTs are traded, and to get a complete picture of them, we need to "fill in the gaps."
 
-Think of it this way: 
-* Home A with 3 bedrooms + driveway is sold
-* But Home B with 3 bedrooms with no driveway isn't. 
+Think of it this way:
+* Home A, with 3 bedrooms and a driveway, is sold.
+* But Home B, with 3 bedrooms and no driveway, isn't.
 
-What is the worth of Home B? We can use other homes (e.g Home A) to make a guess for Home B. 
+What is the worth of Home B? We can use other homes (e.g., Home A) to make a guess for Home B.
 
 **Flipside Crypto**
 
-This is a data provider that has onchain crypto data. They are hosting DeepNFTValue's data as well and have free compute and dashboard making capabilities
+This is a data provider that has on-chain crypto data.  They also host DeepNFTValue's data and have free compute and dashboard-making capabilities.
+
 
 ### NFT Collection Coverage
 
-We are limited to the number of collections available from Flipside. Here are the list of NFT collections
+We are limited to the number of collections available from Flipside.  Here is the list of NFT collections:
 
 1. CryptoPunks
 2. Bored Ape Yacht Club
@@ -64,40 +67,40 @@ We are limited to the number of collections available from Flipside. Here are th
 6. Azuki
 7. Nakamigos
 
-### A mental model on how NFTs are categorized
-___
+### A Mental Model on How NFTs Are Categorized
 
-In the NFT community, there are usually 4 implicit ways NFTs are grouped
+In the NFT community, there are usually four implicit ways NFTs are grouped:
 
-1. **Grails**: Are usually the rarest in terms of a particular trait or are the top few most expensive due to a series of highly desired attributes
+1. **Grails:** These are usually the rarest in terms of a particular trait or are among the top few most expensive due to a series of highly desired attributes.
 
-2. **Premium**: Also has rare traits and are fairly expensive relative to the rest of the NFTs but are a little cheaper than grails
+2. **Premium:** These also have rare traits and are fairly expensive relative to the rest of the NFTs, but are a little cheaper than grails.
 
-3. **Mids**: An arbitraty mid tier
+3. **Mids:** An arbitrary mid-tier.
 
-4. **Floor**: Usually the cheapest in the collection. Interestingly, floors are used to monitor the general price performance of an NFT because if the cheapest tokens are priced higher, then the rest of the above tiers would follow as well. Think of it as *Lowest Price + some financial premium = NFT Price* This is why the floor price is a widely followed metric to gauge the health of an NFT collection
+4. **Floor:** These are usually the cheapest in the collection. Interestingly, floor prices are used to monitor the general price performance of an NFT because if the cheapest tokens are priced higher, then the rest of the above tiers would follow as well. Think of it as *Lowest Price + some financial premium = NFT Price*. This is why the floor price is a widely followed metric to gauge the health of an NFT collection.
 
-So what does the above tell us: the attirbutes, or traits, of the NFT largely drives drive price. By mapping out and ranking the trait's price. We can find what traits are valuable and assign a category of an NFT
+So what does the above tell us? The attributes, or traits, of the NFT largely drive price. By mapping out and ranking the trait's price, we can find what traits are valuable, assign a category, then associate the most valuable trait label that a particular NFT has to an NFT.
 
 For instance, here is a graph of the Red Panda trait. We see that NFTs with the red panda trait are sold at a price close to the median price of the Red Panda trait.
 
-![Selling Price and Trait valuation](red_panda_deepnftvalue.png)
+![Selling Price and Trait Valuation](red_panda_deepnftvalue.png)
 
-The observant reader may notice: Hey why are some NFTs sold a much higher price than the median red panda price? The answer is because these NFTs probably have a trait that is more valuable. For instance:
+The observant reader may notice: "Hey, why are some NFTs sold at a much higher price than the median red panda price?" The answer is because these NFTs probably have a trait that is more valuable. For instance:
 
 ![Bucket](red_panda_with_bucket.png)
 
-We see that although this is a red panda (and we can't see it!), it has a very rare blue bucket headgear (9 in existance). Therefore, it commands a higher premium
+We see that although this is a red panda (and we can't see it!), it has a very rare blue bucket headgear (9 in existence). Therefore, it commands a higher premium.
 
-![blue bucket price trend](blue_bucket_price.png)
+![Blue Bucket Price Trend](blue_bucket_price.png)
 
-To recap based on what we have learnt:
-1. NFT prices are (usually) driven by their most expensive traits
-2. The value of the trait can be proxied by looking at the series of NFTs with that particular trait
+To recap, based on what we have learned:
 
-For this analytical project, the median price of all NFTs with a particular trait is mapped is calculated
+1. NFT prices are (usually) driven by their most expensive traits.
+2. The value of a trait can be proxied by looking at the series of NFTs with that particular trait.
 
-![Categorization by Trait for cryptopunks](trait_category.png)
+For this analytical project, the median price of all NFTs with a particular trait is calculated and mapped.
+
+![Categorization by Trait for Cryptopunks](trait_category.png)
 
 ![Price Table](example_price_table.png)
 
@@ -147,15 +150,15 @@ The final price tier labels are assigned as:
 - Premium: Between max_upper_mids and min_grail
 - Grail: >= min_grail price
 
-# Tracking a collections category performance
+# Tracking a Collection's Category Performance
 
-From here on out the job becomes easier because we have assigned a label to each NFT. Then we calculate their price performance over time by creating a baseline of 100 points. Then for each day, the changes on the initial 100 point is added/subtracted to get performance in absolute terms
+From here on out, the job becomes easier because we've assigned a label to each NFT.  We then calculate their price performance over time by creating a baseline of 100 points.  For each day, the change from that initial 100 points is added or subtracted to get the performance in absolute terms.
 
-This is similar to how the S&P is calculated
+This is similar to how the S&P 500 is calculated.
 
 ![cryptopunks](cryptopunks.png)
 
-Here we can see that grails are largely flat in value but the rest of the other tiers fluctuate wildly (especially floors). This suggest that for traders, its better to gain trade floors while collectors should focus on grails.
+Here we can see that grails are largely flat in value, but the rest of the other tiers fluctuate wildly (especially floor prices). This suggests that, for traders, it's better to trade floors, while collectors should focus on grails for price stability.
 
 # Building the Index
 
